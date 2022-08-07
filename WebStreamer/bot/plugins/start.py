@@ -45,10 +45,10 @@ async def start(b, m):
                     parse_mode="markdown"
                 )
                 return
-            except Exception:
+            except Exception as e:
                 await b.send_message(
                     chat_id=m.chat.id,
-                    text="Something went Wrong. Contact my [Support Group](https://t.me/TheTeleRoid).",
+                    text=f"{e}",
                     parse_mode="markdown",
                     disable_web_page_preview=True)
                 return
