@@ -11,7 +11,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 db = Database(Var.DATABASE_URL, Var.SESSION_NAME)
 
 
-@StreamBot.on_message(filters.private & (filters.document | filters.video | filters.audio) & filters.user(Var.OWNER_ID) & ~filters.edited, group=4)
+@StreamBot.on_message(filters.private & (filters.document | filters.video | filters.audio) & filters.user(Var.OWNER_ID), group=4)
 async def private_receive_handler(c: Client, m: Message):
     
     try:
